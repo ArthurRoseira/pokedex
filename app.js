@@ -1,8 +1,10 @@
 const loader = document.querySelector('.loader');
 const board = document.querySelector('#board');
 const pageControl = document.querySelector('.pagination');
+const btnSearch = document.querySelector('#search_name');
 
 let listPokemons = [];
+let pokemonData = [];
 let pageLimit = 16;
 let actualPage = 1;
 
@@ -16,6 +18,7 @@ const fetchPokemons = () => {
   promisses.push(fetch(url).then(response => response.json()));
  }
  Promise.all(promisses).then(pokemons => {
+  pokemonData = pokemons;
   pokemons.forEach(pokemon => {
    const types = pokemon.types.map(typeinfo => typeinfo.type.name)
    let card = `
@@ -90,7 +93,28 @@ function paginationEvents(searchList) {
  })
 }
 
+function searchbyname(name) {
+ const pokemons = pokemonData.filter(pokemon => pokemon.name == name);
+ console.log(pokemons);
+ let resultSearch = []
+ for (let i = 0; i < pokemons.length; i++) {
+  let id = pokemons[i].id;
+  for (let j = 0; j <= listPokemons.length; j++) {
+   if (id - 1 == j) {
+    resultSearch.push(listPokemons[j])
+    console.log(resultSearch);
+   }
+  }
+ }
+ pagination(1, resultSearch);
+}
+
 
 document.addEventListener("DOMContentLoaded", () => {
  fetchPokemons();
+ btnSearch.addEventListener('click', (event) => {
+  event.preventDefault()
+  let value = document.querySelector('#search').value
+  searchbyname(value);
+ })
 })

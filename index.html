@@ -2,67 +2,68 @@
 <html lang="en">
 
 <head>
- <meta charset="UTF-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-  integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-  crossorigin="anonymous" />
- <link rel="stylesheet" href="./style/style.css">
- <title>Pokedex</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Pokedex</title>
 </head>
 
 <body>
- <!-- Nav and SideBar -->
- <nav class='red lighten-1'>
-  <div class="nav-wrapper container">
-   <img src="./images/poke_logo.png" alt="" srcset="" class="brand-logo responsive_logo center">
-   <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
-   <ul class="right show-on-large">
-    <form class="hide-on-med-and-down">
-     <div class="input-field" style="max-width: 400pt;">
-      <input id="search" type="text" class="validate" placeholder="Search..." required>
-      <label class="label-icon center" for="search"><button type="submit" class='btn-flat transparent'><i
-         class="material-icons icon">search</i></button></label>
-     </div>
-     <div class="input-field col s6">
-     </div>
-    </form>
-   </ul>
-  </div>
-  <ul class="sidenav" id="mobile-demo">
-   <li><a href="sass.html">Sass</a></li>
-   <li><a href="badges.html">Components</a></li>
-   <li><a href="collapsible.html">Javascript</a></li>
-   <li><a href="mobile.html">Mobile</a></li>
-  </ul>
+    <!-- Nav and SideBar -->
+    <nav class='red lighten-1'>
+        <div class="nav-wrapper container">
+            <img src="./images/poke_logo.png" alt="" srcset="" class="brand-logo responsive_logo center">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i
+                    class="material-icons">menu</i></a>
+            <ul class="right show-on-large">
+                <form class="hide-on-med-and-down">
+                    <div class="input-field" style="max-width: 400pt;">
+                        <input id="search" type="text" class="validate" placeholder="Search..." required>
+                        <label class="label-icon center" for="search"><button type="submit" class='btn-flat transparent'
+                                id='search_name'><i class="material-icons icon">search</i></button></label>
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                </form>
+            </ul>
+        </div>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="sass.html">Generations</a></li>
+            <li><a href="badges.html">Types</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+        </ul>
 
-  <!-- PreLoader -->
-  <div class="container center loader">
-   <img src="./images/pokeball.png" alt="" class="preloader_img">
-  </div>
- </nav>
+        <!-- PreLoader -->
+        <div class="container center loader">
+            <img src="./images/pokeball.png" alt="" class="preloader_img">
+        </div>
+    </nav>
 
 
 
- <div class="container">
-  <div class="row" id='board'>
-  </div>
+    <div class="container">
+        <div class="row" id='board'>
+        </div>
 
-  <!-- Pagination -->
-  <ul class="pagination hide">
-   <li class="waves-effect disabled" id='down'><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-  </ul>
- </div>
+        <!-- Pagination -->
+        <ul class="pagination hide">
+            <li class="waves-effect disabled" id='down'><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        </ul>
+    </div>
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
- <script src="app.js"></script>
- <script>
-  document.addEventListener('DOMContentLoaded', function () {
-   M.Sidenav.init(document.querySelectorAll('.sidenav'));
-  })
- </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            M.Sidenav.init(document.querySelectorAll('.sidenav'));
+        })
+    </script>
 </body>
 
 </html>
